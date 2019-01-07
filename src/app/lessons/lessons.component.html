@@ -1,0 +1,25 @@
+<h1>
+    {{date}}
+</h1>
+<div class="flex" *ngIf="lessons && lessons.length">
+    <div class="flex__col" *ngFor='let time of availableTimes'>
+        <div>
+            <div>
+                <div class="flex__head">
+                    <button class="btn btn-success">{{time}}</button>
+                </div>
+                <div *ngFor='let lesson of lessons'>
+                    <div *ngIf="time === lesson.period">
+                        <div *ngIf="lesson.records && lesson.records.length">
+                            <div *ngFor='let record of lesson.records'>
+                                <div class="flex__item">
+                                    {{record.name}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
