@@ -27,7 +27,9 @@ export class LessonsService {
                     throwError(response.error);
                 }
 
-                return response.lessons as Lesson[]; // kind of useless
+                return response.lessons as Lesson[];
             }));
     }
+
+
 }

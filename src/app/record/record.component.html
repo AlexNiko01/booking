@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>{{date}}</h1>
+    <h3>{{time}}</h3>
+    <form #record="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name"
+                   required
+                   [(ngModel)]="model.name" name="name"
+                   #name="ngModel"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone"
+                   required
+                   [(ngModel)]="model.phone" name="phone"
+                   #phone="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="places">Places</label>
+            <input type="text" class="form-control" id="places"
+                   required
+                   [(ngModel)]="model.places" name="places"
+                   #places="ngModel">
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+</div>

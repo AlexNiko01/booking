@@ -6,7 +6,7 @@
         <div>
             <div>
                 <div class="flex__head">
-                    <button class="btn btn-success">{{time}}</button>
+                    <button class="btn btn-success" (click)="lessonClicked(time)">{{time}}</button>
                 </div>
                 <div *ngFor='let lesson of lessons'>
                     <div *ngIf="time === lesson.period">

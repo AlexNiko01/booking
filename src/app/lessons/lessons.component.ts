@@ -3,6 +3,7 @@ import {log} from "util";
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {LessonsService} from '../lessons.service'
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -22,7 +23,9 @@ export class LessonsComponent implements OnInit {
     ];
 
     constructor(private route: ActivatedRoute,
-                private lessonsService: LessonsService) {
+                private lessonsService: LessonsService,
+                private router: Router
+    ) {
     }
 
     ngOnInit() {
@@ -40,5 +43,10 @@ export class LessonsComponent implements OnInit {
                     log(typeof lesson);
                 })
             });
+    }
+
+    lessonClicked(time: string): void {
+        // time = time.replace(/\s+/g, '');
+        this.router.navigate(['record/' + this.date + '/' + time]);
     }
 }
