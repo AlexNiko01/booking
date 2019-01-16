@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable, throwError} from "rxjs";
-import {map} from "rxjs/operators";
-import {Record} from "./models/record";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {Record} from './models/record';
 
 const headers = new HttpHeaders({'Content-Type': 'application/json'});
 
@@ -22,6 +22,7 @@ export class RecordService {
                     throw new Error(response.error);
                 }
                 return response as Record[];
+                console.log(date);
             }));
 
     }

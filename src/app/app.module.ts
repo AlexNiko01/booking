@@ -12,6 +12,8 @@ import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
 import {LessonsComponent} from './lessons/lessons.component';
 import {RecordComponent} from './record/record.component';
 import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
     declarations: [
@@ -19,8 +21,10 @@ import {FormsModule} from '@angular/forms';
         CalendarComponent,
         LessonsComponent,
         RecordComponent,
+
     ],
     imports: [
+        NgbModule.forRoot(),
         BrowserModule,
         HttpClientModule,
         AppRoutingModule,

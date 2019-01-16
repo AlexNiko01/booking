@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {log} from "util";
+import {log} from 'util';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-import {LessonsService} from '../lessons.service'
-import {Router} from "@angular/router";
+import {LessonsService} from '../lessons.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -41,7 +41,7 @@ export class LessonsComponent implements OnInit {
                 this.lessons = lessons;
                 lessons.forEach((lesson) => {
                     log(typeof lesson);
-                })
+                });
             });
     }
 
