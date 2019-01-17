@@ -17,7 +17,8 @@ export class RecordComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 private recordService: RecordService,
-                private successComponent: SuccessComponent) {
+                private successComponent: SuccessComponent
+    ) {
     }
 
     ngOnInit() {
