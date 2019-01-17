@@ -13,7 +13,6 @@ import {LessonsComponent} from './lessons/lessons.component';
 import {RecordComponent} from './record/record.component';
 import {FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {SuccessComponent} from './success/success.component';
 import {PopupSuccessComponent} from './popup-success/popup-success.component';
 
 
@@ -23,7 +22,6 @@ import {PopupSuccessComponent} from './popup-success/popup-success.component';
         CalendarComponent,
         LessonsComponent,
         RecordComponent,
-        SuccessComponent,
         PopupSuccessComponent,
 
     ],
@@ -40,7 +38,8 @@ import {PopupSuccessComponent} from './popup-success/popup-success.component';
         FormsModule
     ],
     entryComponents: [
-        PopupSuccessComponent
+        PopupSuccessComponent,
+
     ],
     providers: [],
     bootstrap: [AppComponent]

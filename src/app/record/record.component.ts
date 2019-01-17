@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Record} from '../models/record';
 import {ActivatedRoute} from '@angular/router';
 import {RecordService} from '../record.service';
-import {SuccessComponent} from '../success/success.component';
+import {PopupSuccessComponent} from '../popup-success/popup-success.component';
+import {ModalService} from '../modal.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class RecordComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 private recordService: RecordService,
-                private successComponent: SuccessComponent
+                private modal: ModalService
     ) {
     }
 
@@ -31,12 +32,13 @@ export class RecordComponent implements OnInit {
         this.model.period = this.time;
         this.recordService.createRecord(this.model)
             .subscribe((response) => {
-                    // if (response.success === true) {
-                        this.successComponent.initSuccessModal();
-                    // }
+                    if (response.success === true) {
+                        this.modal.init(PopupSuccessComponent, {
+                            message: 'congratulation chmo!'
+                        }, {});
+                    }
                     console.log(response);
                 }
             );
     }
-
 }

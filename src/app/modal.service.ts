@@ -13,7 +13,7 @@ export class ModalService {
     private overlayElementId = 'overlay';
 
     init(component: any, inputs: object, outputs: object) {
-        let componentConfig = {
+        const componentConfig = {
             inputs: inputs,
             outputs: outputs
         };

@@ -21,8 +21,7 @@ export class RecordService {
                 if (!response.success) {
                     throw new Error(response.error);
                 }
-                return response;
-                console.log(date);
+                return response as Record[];
             }));
 
     }
