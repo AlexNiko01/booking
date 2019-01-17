@@ -12,7 +12,9 @@ import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
 import {LessonsComponent} from './lessons/lessons.component';
 import {RecordComponent} from './record/record.component';
 import {FormsModule} from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {SuccessComponent} from './success/success.component';
+import {PopupSuccessComponent} from './popup-success/popup-success.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         CalendarComponent,
         LessonsComponent,
         RecordComponent,
+        SuccessComponent,
+        PopupSuccessComponent,
 
     ],
     imports: [
@@ -34,6 +38,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
             useFactory: adapterFactory
         }),
         FormsModule
+    ],
+    entryComponents: [
+        PopupSuccessComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

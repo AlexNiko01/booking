@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Record} from '../models/record';
 import {ActivatedRoute} from '@angular/router';
 import {RecordService} from '../record.service';
+import {SuccessComponent} from '../success/success.component';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class RecordComponent implements OnInit {
     model = new Record();
 
     constructor(private route: ActivatedRoute,
-                private recordService: RecordService) {
+                private recordService: RecordService,
+                private successComponent: SuccessComponent) {
     }
 
     ngOnInit() {
@@ -27,8 +29,12 @@ export class RecordComponent implements OnInit {
         this.model.date = this.date;
         this.model.period = this.time;
         this.recordService.createRecord(this.model)
-            .subscribe(response =>
-                console.log(response)
+            .subscribe((response) => {
+                    // if (response.success === true) {
+                        this.successComponent.initSuccessModal();
+                    // }
+                    console.log(response);
+                }
             );
     }
 
