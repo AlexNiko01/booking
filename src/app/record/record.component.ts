@@ -34,7 +34,8 @@ export class RecordComponent implements OnInit {
             .subscribe((response) => {
                     if (response.success === true) {
                         this.modal.init(PopupSuccessComponent, {
-                            message: 'congratulation chmo!'
+                            message: 'congratulation chmo!',
+                            date: this.date
                         }, {});
                     }
                     console.log(response);
